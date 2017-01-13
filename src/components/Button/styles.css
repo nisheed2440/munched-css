@@ -1,0 +1,11 @@
+:local{
+    .btn-control{
+        border: none;
+        &.btn-primary{
+            background: #999999;
+        }
+        &.btn-secondary{
+            background: #CCCCCC;
+        }
+    }
+}
