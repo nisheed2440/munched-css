@@ -1,12 +1,5 @@
 :local {
     .header {
         font-family: monospace;
-        &.red-color {
-            color: red;
-        }
-
-        .btn-control{
-            color:#FFF;
-        }
     }
 }

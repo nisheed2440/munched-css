@@ -1,11 +1,18 @@
-:local{
-    .btn-control{
-        border: none;
-        &.btn-primary{
-            background: #999999;
-        }
-        &.btn-secondary{
-            background: #CCCCCC;
-        }
-    }
+.component-btn {
+    composes: btn from "primer-css/build/build.css";
+    border-radius:0;
+}
+
+.default{
+    composes: component-btn;
+}
+
+.primary {
+    composes: component-btn;
+    composes: btn-primary from "primer-css/build/build.css";
+}
+
+.secondary {
+    composes: component-btn;
+    composes: btn-outline from "primer-css/build/build.css";
 }

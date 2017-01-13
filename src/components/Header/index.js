@@ -1,16 +1,19 @@
-import styles from './styles.css';
 import React from 'react';
+import CSSModules from 'react-css-modules';
 import Button from '../Button';
+import styles from './styles.css';
 
-export default class Header extends React.Component {
+class Header extends React.Component {
     constructor(props) {
         super(props);
     }
     render() {
         return (
-           <header className={`${styles['header']} ${styles['red-color']}`}>
+           <header styleName="header">
             <h1>{this.props.title}</h1>
-            <Button/>
+            <Button type={0}/>
+            <Button type={1}/>
+            <Button type={2}/>
            </header>
         );
     }
@@ -19,3 +22,5 @@ export default class Header extends React.Component {
 Header.defaultProps = {
     title:'Hello Wolrd'
 };
+
+export default CSSModules(Header,styles);

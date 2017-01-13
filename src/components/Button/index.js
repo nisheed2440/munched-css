@@ -1,23 +1,34 @@
-import styles from './styles.css';
 import React from 'react';
+import CSSModules from 'react-css-modules';
 import classNames from 'classnames';
+import styles from './styles.css';
 
-export default class Header extends React.Component {
+/*
+    Types
+    0 - default
+    1 - primary
+    2 - secondary
+ */
+
+class Button extends React.Component {
     constructor(props) {
         super(props);
     }
     render() {
         var classes = classNames({
-            [styles['btn-control']] : true,
-            [styles['btn-primary']] : true,
-            [styles['btn-secondary']] : false
+            'default': this.props.type === 0,
+            'primary': this.props.type === 1,
+            'secondary': this.props.type === 2
         });
         return (
-           <button className={classes} type="button" title={this.props.text} >{this.props.text}</button>
+           <button className="glob" styleName={classes} type="button" title={this.props.text}>{this.props.text}</button>
         );
     }
 }
 
-Header.defaultProps = {
-    text:'Button Text'
+Button.defaultProps = {
+    text:'Button Text',
+    type:0
 };
+
+export default CSSModules(Button,styles);

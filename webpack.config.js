@@ -6,9 +6,13 @@ module.exports = {
     output: {
         path: __dirname + '/dist',
         filename: 'bundle.js',
+        publicPath: '/dist/'
     },
     devServer: {
-        contentBase: './'
+        contentBase: './',
+        quiet: true,
+        noInfo: true,
+        compress: true
     },
     module: {
         loaders: [{
@@ -20,12 +24,13 @@ module.exports = {
             }
         }, {
             test: /\.css$/,
-            exclude: /(node_modules|bower_components)/,
+            exclude: /bower_components/,
             loader: combineLoaders([{
                 loader: 'style-loader'
             }, {
                 loader: 'css-loader',
                 query: {
+                    modules: true,
                     importLoaders: 1,
                     localIdentName: '[local]'
                 }

@@ -11,6 +11,7 @@ config.module.loaders[1].loader = ExtractTextPlugin.extract('style-loader',
     combineLoaders([{
         loader: 'css-loader',
         query: {
+            modules: true,
             importLoaders: 1,
             localIdentName: '[hash:base64:5]'
         }
