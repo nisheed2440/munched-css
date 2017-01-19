@@ -20,7 +20,7 @@ class Header extends React.Component {
 }
 
 Header.defaultProps = {
-    title:'Hello Wolrd'
+    title:'Hello World'
 };
 
 export default CSSModules(Header,styles);
